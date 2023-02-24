@@ -111,7 +111,7 @@ nav {
     width: 100%;
     background-color: red;
     padding: 15px;
-    z-index: 2;
+    z-index: 3;
 }
 
 nav ul {
@@ -131,7 +131,7 @@ nav a:hover::after {
     clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
 }
 
-nav a:after {
+nav a::after {
     content: "";
     width: 100%;
     display: block;
@@ -214,221 +214,244 @@ header .icons img, header .icons svg {
     height: 25px;
 }
 
-/************** Content ****************/
-.content {
+/********** Bg **********/
+.bg {
     display: flex;
-    height: 90vh;
+    gap: 180px;
+    justify-content: end;
     width: 100%;
-    justify-content: center;
-    padding: 0 20px;
-    gap: 60px;
+    text-align: center;
     align-items: center;
-    background-color: rgb(240, 239, 239);
+    height: 100vh;
+    background: linear-gradient(rgba(226, 7, 128, 0.6) 100%, transparent), url("../../rg/img/corp.png");
+    background-size: contain;
+    background-repeat: none;
+    color: white;
 }
 
-.content > div {
-    width: 35%;
-    height: 450px;
+.bg .cont-text ul{
+    margin-top: 60px;
 }
 
-.content .cont-img {
-    width: 35%;
-    height: 450px ;
-    animation: effect 1.5s infinite alternate-reverse;
-}
-
-@keyframes effect {
-    100% {
-        transform: scale(1.08);
-    }
-}
-
-.content .cont-img img {
-    width: 100%;
-    height: 100%;
-}
-
-.content .cont-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.content .cont-text h1 {
-    color: red;
-    font-size: 40px;
-    margin-bottom: 15px;
-}
-
-.content .cont-text p {
-    font-weight: bold;
+.bg .cont-text li {
     font-size: 20px;
 }
 
-.content .cont-text svg {
-    width: 60px;
-    height: 60px;
+.bg .cont-text h1 {
+    font-size: 42px;
+    line-height: 60px;
 }
 
-.content .cont-text > div {
+.bg .cont-text li {
+    margin-top: 20px;
+}
+
+.bg .formulario {
+    background-color: rgb(21, 91, 197);
+    padding: 40px;
+    color: white;
+    width: 40%;
+    border-bottom-left-radius: 20%;
+}
+
+.bg .formulario form {
     display: flex;
+    flex-direction: column;
     gap: 20px;
+}
+
+.bg .formulario h3 {
+    margin: 20px 0;
+}
+
+.bg form input, .bg form textarea {
+    height: 40px;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    padding: 0 10px;
+}
+
+.bg form div  {
+    display: flex;
+    gap: 10px;
+}
+
+.bg form div input {
+    width: 100%;
+}
+
+.bg form textarea {
+    height: 140px;
+    padding-top: 10px;
+}
+
+.bg form button {
+    background-color: red;
+    border-radius: 10px;
+    padding: 10px 20px;
+    color: white;
+    font-size: 16px;
+    width: fit-content;
+    align-self: end;
+}
+
+/*********** Elección ***********/
+.eleccion {
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    padding: 70px 20px;
+    gap: 20px;
+    width: 100%;
+    background: url("../../rg/img/Patrones-1.jpg");
+    background-size: contain;
+}
+
+.eleccion .cont-text h2 {
+    font-size: 30px;
+    margin-bottom: 25px;
+    color: red;
+}
+
+.eleccion .cont-text li {
     margin-top: 20px;
     font-size: 20px;
-    font-weight: bold;
 }
 
-.content .cont-text h2 {
-    color: red;
-}
-
-/************ Regalos *************/
-.regalos {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    padding: 50px 20px;
-    text-align: center;
-    gap: 20px;
-}
-
-.regalos > h2 {
-    font-size: 35px;
-}
-
-.regalos > span {
-    font-size: 25px;
-    color: red;
-    font-weight: bold;
-}
-
-.regalos > p {
-    width: 70%;
-    line-height: 25px;
-    font-size: 18px;
-}
-
-.regalos > img {
-    width: 150px;
-    object-fit: cover;
-}
-
-.regalos .box-grid {
-    display: grid;
-    width: 90%;
-    grid-template-columns: repeat(3, 1fr);
-}
-
-.regalos .box {
-    position: relative;
+.eleccion .slider {
+    width: 600px;
     overflow: hidden;
 }
 
-.regalos .box:hover > img{
-    transform: scale(1.06);
-}
-
-.regalos .box:hover > a{
-    transform: translateX(-50%) scale(1.1);
-}
-
-.regalos .box img {
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    transition: transform .8s;
-}
-
-.regalos .box a {
-    position: absolute;
-    display: block;
-    background-color: red;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    border: 2px solid white;
-    padding: 10px 20px;
-    transition: transform .8s;
-}
-
-/************* Variedad **************/
-.variedad {
+.eleccion .sliderMove {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    padding: 50px 20px;
-    text-align: center;
-    gap: 20px;
-    background-color: white;
-}
-
-.variedad > h2 {
-    font-size: 35px;
-}
-
-.variedad > span {
-    font-size: 25px;
-    color: red;
-    font-weight: bold;
-}
-
-.variedad > p {
-    width: 70%;
-    line-height: 25px;
-    font-size: 18px;
-}
-
-.variedad > img {
-    width: 150px;
-    object-fit: cover;
-}
-
-.variedad .slider {
-    width: 85%;
-    position: relative;
-    overflow: hidden;
-    margin-top: 30px;
-}
-
-.variedad .sliderMove {
-    display: flex;
-    gap: 20px;
-    width: 300%;
     justify-content: center;
-    transition: transform .6s;
+    gap: 20px;
+    width: calc(200% + (200%/3));
+    transition: transform .5s;
 }
 
-.variedad .sliderMove div {
-    width: calc((100% / 9) - 20px);
-    height: 220px;
+.eleccion .box {
+    height: 250px;
+    width: calc((100% / 8) - 20px);
 }
 
-.variedad .sliderMove div img {
+.eleccion .box img {
     width: 100%;
     height: 100%;
+    border-radius: 15px;
 }
 
-.variedad .arrow {
+.eleccion .slider ul {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.eleccion .slider li {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255, 0, 0, .3);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.eleccion .slider li:first-child {
+    background-color: red;
+}
+
+/************ Banner ***********/
+.banner {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 30px 80px;
+    background: linear-gradient(rgba(165, 4, 44, 0.6) 100%, transparent), url("../../rg/img/bannr.png");
+    position: relative;
+}
+
+.banner .cont-text {
+    width: 45%;
+    color: white;
+}
+
+.banner .cont-text h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.banner a {
+    background-color: red;
+    font-size: 18px;
+    border-radius: 15px;
+    padding: 10px 20px;
+    display: block;
+    width: fit-content;
+    margin-top: 20px;
+    transition: all .4s;
+    border: 1px solid red;
+}
+
+.banner a:hover {
+    background-color: white;
+    color:red;
+}
+
+.banner p {
+    font-size: 18px;
+}
+
+.banner img {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: transparent;
+    right: 20px;
+    bottom: 0;
+    z-index: 2;
 }
 
-.variedad .arrow img {
-    width: 32px;
-    height: 32px;
+/*********** Beneficios *************/
+.beneficios {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    text-align: center;
+    background: url("../../rg/img/Patrones-1.jpg");
+    background-repeat: repeat;
+    padding: 60px 20px;
 }
 
-.variedad .left {
-    left: 15px;
-    z-index: -1;
+.beneficios > h2 {
+    font-size: 35px;
 }
 
-.variedad .right {
-    right: 15px;
+.beneficios > img {
+    width: 150px;
+    object-fit: cover;
+    margin: 0 auto;
+}
+
+.beneficios .cont-box {
+    display: flex;
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 15px;
+    gap: 20px;
+}
+
+.beneficios .box img {
+    width: 100%;
+    height: 400px;
+}
+
+.beneficios .box .text {
+    background-color: red;
+    color: white;
+    padding: 20px 10px;
+    border-radius: 10px;
+    font-size: 18px;
+    margin-top: 10px;
 }
 
 /********** Contacto **********/
@@ -486,6 +509,7 @@ header .icons img, header .icons svg {
     background-color: rgb(218, 63, 63);
 }
 
+
 /********** Footer **********/
 footer {
     width: 100%;
@@ -531,7 +555,7 @@ footer ul hr {
     header .search, header .option, header hr, header nav{
         display: none;
     }
-
+    
     header .menu {
         z-index: 3;
     }
