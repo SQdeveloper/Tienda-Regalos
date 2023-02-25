@@ -214,6 +214,10 @@ header .icons img, header .icons svg {
     height: 25px;
 }
 
+header .icons a {
+    color: black;
+}
+
 /********** Bg **********/
 .bg {
     display: flex;
@@ -528,6 +532,7 @@ footer ul {
     gap: 20px;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
 }
 
 footer ul hr {
@@ -542,6 +547,10 @@ footer ul hr {
     /*********** Header *************/
     header {
         box-shadow: 0 1px 15px rgb(0 0 0 / 8%);
+        position: fixed;
+        z-index: 3;
+        top: 0;
+        left: 0;
     }
 
     header .top {
@@ -555,8 +564,148 @@ footer ul hr {
     header .search, header .option, header hr, header nav{
         display: none;
     }
-    
+
     header .menu {
         z-index: 3;
+    }
+
+    nav {
+        display: none;
+    }
+
+    /****** Bg *******/
+    .bg {
+        margin-top: 80px;
+        height: 85vh;
+        gap: 80px;
+    }
+
+    /******* beneficios *******/
+    .beneficios .box img {
+        height: 300px;
+    }
+
+    .beneficios .cont-box {
+        width: 80%;
+    }
+
+    /******* Eleccion *******/
+    .eleccion .sliderMove {
+        width: 400%;
+    }
+
+    .eleccion .box {
+        height: 300px;
+    }
+
+    /******** Contacto ********/
+    .contacto > img {
+        display: none;
+    }
+    
+    .contacto {
+        flex-direction: column;
+        padding: 30px 20px;
+        justify-content: start;
+    }
+
+    .contacto .info {
+        width: 100%;
+    }
+
+    .contacto form input, .contacto form button {
+        width: 80%;
+    }
+}
+
+@media (max-width: 820px) {
+    /******* Bg ********/
+    .bg {
+        flex-direction: column;
+        justify-content: center;
+        height: 1100px;
+        gap: 40px;
+    }
+
+    .bg .formulario {
+        width: 100%;
+    }
+
+    .bg form button {
+        align-self: center;
+    }
+
+    /******** Eleccion *********/
+    .eleccion {
+        flex-direction: column;
+    }
+
+    .eleccion .slider {
+        width: 100%;
+    }
+
+    .eleccion .cont-text {
+        margin-left: 10px;
+    }
+
+    /******* Banner *******/
+    .banner {
+        padding: 30px 20px;
+    }
+
+    .banner img {
+        display: none;
+    }
+
+    .banner .cont-text {
+        width: 100%;
+    }
+}
+
+@media (max-width: 640px) {
+    /************* Bg **************/
+    .bg {
+        height: 1020px;
+        padding-bottom: 30px;
+        padding-top: 20px;
+    }
+
+    .bg .formulario {
+        padding: 20px;
+    }
+    
+    /********* Beneficios **********/
+    .beneficios .cont-box {
+        flex-direction: column;
+    }
+
+    /***** Footer *******/
+    footer ul {
+        gap: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    /********* Bg ********/
+    .bg .cont-text h1 {
+        font-size: 35px;
+    }
+
+    .bg .cont-text ul {
+        margin-top: 20px;
+    }
+
+    /*********** Eleccion *************/
+    .eleccion {
+        padding: 50px 10px;
+    }
+
+    .eleccion .box {
+        height: 220px;
+    }
+
+    /*********** Beneficios ***********/
+    .beneficios {
+        padding: 50px 10px;
     }
 }
